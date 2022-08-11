@@ -1,0 +1,192 @@
+/* ===============
+    RESETS
+================== */
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(var(--clr-bg));
+    color: hsl(var(--clr-font));
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===============
+    COLORS
+================== */
+
+:root {
+    --clr-bg: 110, 30%, 96%;            /* mint cream    */
+    --clr-bg-alt: 110, 30%, 96%;        /* mint cream    */
+    --clr-bg-alt-2: 110, 30%, 96%;      /* mint cream    */
+    --clr-font: 0, 0%, 7%;              /* smoky black   */
+    --clr-border: 216, 12%, 84%;        /* light grey    */
+    --clr-highlight: 84, 100%, 39%;     /* Sheen Green   */
+}
+
+[data-theme="dark"] {  
+    --clr-bg: 0, 0%, 7%;                /* smoky black   */
+    --clr-bg-alt: 240, 1%, 18%;         /* jet           */
+    --clr-bg-alt-2: 0, 0%, 29%;         /* davys grey    */
+    --clr-font: 110, 30%, 96%;          /* mint cream    */
+    --clr-border: 240, 1%, 18%;         /* jet           */
+    --clr-highlight: 84, 100%, 23%;     /* Norm Crosby   */
+}
+
+
+/* ===============
+    FLEXBOX
+================== */
+
+.flex {
+    display: flex;
+}
+.column {
+    flex-direction: column;
+}
+.row {
+    flex-direction: row;
+}
+
+/* ===============
+    HEADER
+================== */
+
+header {
+    background-image: url(images/hero-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 210px;
+    padding: 20px;
+    text-align: right;
+    color: #F3F8F2;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* NAV */
+nav li {
+    list-style: none;
+}
+nav a {
+    cursor: pointer;
+    color: #F3F8F2;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: hsla(255, 90%, 40% / 0.5);
+}
+
+
+
+/* ===============
+    MAIN
+================== */
+
+/* SEARCH BAR */
+
+.search-container {
+    height: 40px;
+    width: 90%;
+    max-width: 800px;
+    margin: -20px auto 0;
+}
+.search-bar, .search-btn {
+    height: 40px;
+    border: 1px solid hsl(var(--clr-border));
+    color: hsl(var(--clr-font));
+}
+.search-bar {
+    flex: 1;
+    background-color: hsl(var(--clr-bg-alt));
+    padding-left: 20px;
+}
+.search-btn {
+    cursor: pointer;
+    margin-left: -5px;
+    border-radius: 0 6px 6px 0;
+    width: 120px;
+    background-color: hsl(var(--clr-bg-alt-2));
+}
+.search-icon {
+    display: inline-block;
+    background-color: hsl(var(--clr-bg-alt-2));
+    padding: 10px;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid hsl(var(--clr-border));
+    border-right: none;
+}
+main {
+    width: 100%;
+    min-height: calc(100vh - 210px);
+    background-color: hsl(var(--clr-bg));
+}
+
+/* MOVIE ITEMS */
+
+.movie-item-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    border-bottom: 1px solid hsl(var(--clr-border));
+    line-height: 1.5;
+    align-content: center;
+    padding-bottom: 20px;
+    vertical-align: middle;
+}
+.movie-item-img {
+    height: 150px;
+    width: 99px;
+    border-radius: 3px;
+}
+.movie-item-info-container {
+    padding-left: 20px;
+}
+.movie-item-title {
+    align-items: center;
+}
+.movie-item-title i {
+    color: #FEC654;
+}
+.movie-item-info {
+    align-items: center;
+    font-size: .8rem;
+    line-height: 3;
+}
+.movie-title,
+.movie-runtime,
+.movie-genre{
+    margin-right: 25px;
+}
+.rating {
+    padding-left: 10px;
+}
+.add-watchlist-btn {
+    cursor: pointer;
+    background-color: hsl(var(--clr-bg));
+    border: none;
+    color: hsl(var(--clr-font));
+    border-radius: 4px;
+    padding: 5px 10px;
+    
+}
+.add-watchlist-btn:hover {
+    transform: scale(1.2);
+    background-color: hsl(var(--clr-highlight));
+    box-shadow: 0 0 5px hsla(var(--clr-border), .8);
+}
