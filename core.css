@@ -178,7 +178,8 @@ main {
 .rating {
     padding-left: 10px;
 }
-.add-watchlist-btn {
+.add-watchlist-btn,
+.remove-watchlist-btn {
     cursor: pointer;
     background-color: hsl(var(--clr-bg));
     border: none;
@@ -190,6 +191,12 @@ main {
 .add-watchlist-btn:hover {
     transform: scale(1.2);
     background-color: hsl(var(--clr-highlight));
+    box-shadow: 0 0 5px hsla(var(--clr-lt-grey-jet), .8);
+}
+.remove-watchlist-btn:hover {
+    transform: scale(1.2);
+    background-color: hsl(2, 70%, 53%);
+    color: #000;
     box-shadow: 0 0 5px hsla(var(--clr-lt-grey-jet), .8);
 }
 
@@ -211,4 +218,15 @@ main {
 }
 .placeholder .fa-circle-plus {
     padding: 15px 15px 0;
+}
+.placeholder a {
+    color: hsl(var(--clr-lt-grey-jet));
+    text-decoration: none;
+}
+.placeholder a:visited {
+    color: hsl(var(--clr-lt-grey-jet));
+}
+.placeholder a:hover,
+.placeholder a:focus {
+    color: hsl(var(--clr-font))
 }
