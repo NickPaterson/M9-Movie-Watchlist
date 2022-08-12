@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, p {
     --clr-bg-alt: 110, 30%, 96%;        /* mint cream    */
     --clr-bg-alt-2: 110, 30%, 96%;      /* mint cream    */
     --clr-font: 0, 0%, 7%;              /* smoky black   */
-    --clr-border: 216, 12%, 84%;        /* light grey    */
+    --clr-lt-grey-jet: 216, 12%, 84%;   /* light grey    */
     --clr-highlight: 84, 100%, 39%;     /* Sheen Green   */
 }
 
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, p {
     --clr-bg-alt: 240, 1%, 18%;         /* jet           */
     --clr-bg-alt-2: 0, 0%, 29%;         /* davys grey    */
     --clr-font: 110, 30%, 96%;          /* mint cream    */
-    --clr-border: 240, 1%, 18%;         /* jet           */
+    --clr-lt-grey-jet: 240, 1%, 18%;    /* jet           */
     --clr-highlight: 84, 100%, 23%;     /* Norm Crosby   */
 }
 
@@ -108,10 +108,12 @@ nav a {
 }
 .search-bar, .search-btn {
     height: 40px;
-    border: 1px solid hsl(var(--clr-border));
+    border: 1px solid hsl(var(--clr-lt-grey-jet));
     color: hsl(var(--clr-font));
 }
-.search-bar {
+.search-bar, 
+.search-bar:hover,
+.search-bar:focus {
     flex: 1;
     background-color: hsl(var(--clr-bg-alt));
     padding-left: 20px;
@@ -128,7 +130,7 @@ nav a {
     background-color: hsl(var(--clr-bg-alt-2));
     padding: 10px;
     border-radius: 6px 0 0 6px;
-    border: 1px solid hsl(var(--clr-border));
+    border: 1px solid hsl(var(--clr-lt-grey-jet));
     border-right: none;
 }
 main {
@@ -143,7 +145,7 @@ main {
     width: 90%;
     max-width: 800px;
     margin: 30px auto;
-    border-bottom: 1px solid hsl(var(--clr-border));
+    border-bottom: 1px solid hsl(var(--clr-lt-grey-jet));
     line-height: 1.5;
     align-content: center;
     padding-bottom: 20px;
@@ -188,5 +190,25 @@ main {
 .add-watchlist-btn:hover {
     transform: scale(1.2);
     background-color: hsl(var(--clr-highlight));
-    box-shadow: 0 0 5px hsla(var(--clr-border), .8);
+    box-shadow: 0 0 5px hsla(var(--clr-lt-grey-jet), .8);
+}
+
+/* Placeholders */
+.placeholder {
+    width: 450px;
+    height: calc(100vw - 210px);
+    margin: 0 auto;;
+    justify-content: center;
+    align-items: center;
+    color: hsl(var(--clr-lt-grey-jet));
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.placeholder .fa-film {
+    font-size: 4rem;
+    padding: 15px;
+}
+.placeholder .fa-circle-plus {
+    padding: 15px 15px 0;
 }

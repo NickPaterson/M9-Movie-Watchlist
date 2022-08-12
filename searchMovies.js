@@ -1,26 +1,17 @@
+import searchMovies from './searchMoviesApi.js'
+
 const KEY = "&apikey=9c765940"
 const searchBtn = document.getElementById('search-btn')
 const movieContainer = document.getElementById('movie-container')
 
 searchBtn.addEventListener('click', (e) => {
-    movieContainer.innerHTML = ''
     e.preventDefault()
+    console.log(e.target.value)
+    movieContainer.innerHTML = ''
     const query = document.getElementById('search-input').value
-    fetch(`http://www.omdbapi.com/?s=${query}${KEY}`)
-        .then(response => response.json())
-        .then(data => {
-            const moviesArray = data.Search
-            const movies = moviesArray.map(movie => {
-                fetch(`http://www.omdbapi.com/?i=${movie.imdbID}${KEY}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const html = setHtml(data)
-                        movieContainer.innerHTML += html
-                    })
-                })
-        })
+    searchMovies(query)
 })
-let query
+
 
 function setHtml(movie) {
     const {Title, Runtime, Genre, Plot, Poster, Ratings, imdbID} = movie
