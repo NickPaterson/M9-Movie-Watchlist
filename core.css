@@ -203,7 +203,7 @@ main {
 /* Placeholders */
 .placeholder {
     width: 450px;
-    height: calc(100vw - 210px);
+    min-height: calc(100vh - 230px);
     margin: 0 auto;;
     justify-content: center;
     align-items: center;
