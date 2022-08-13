@@ -36,7 +36,7 @@ searchBtn.addEventListener('click', (e) => {
 function setHtml(movie) {
     const {Title, Runtime, Genre, Plot, Poster, Ratings, imdbID} = movie
     const watchlistBtn = (watchlist.includes(imdbID)) 
-        ? `<button id="${imdbID}" class="remove-watchlist-btn"><i class="fa-solid fa-circle-minus"></i> Watchlist</button>`
+        ? `<button id="${imdbID}" class="remove-watchlist-btn"><i class="fa-solid fa-circle-minus"></i> Remove</button>`
         : `<button id="${imdbID}" class="add-watchlist-btn"><i class="fa-solid fa-circle-plus"></i> Watchlist</button>`
     const ratingValue = (Ratings.length === 0) ? 'N/A' : Ratings[0].Value.slice(0, 3)
     
@@ -66,12 +66,18 @@ movieContainer.addEventListener('click', (e) => {
     console.log(e.target.id)
     if (watchlist.includes(e.target.id)) {
         watchlist.pop(e.target.id)
+        e.target.classList.remove('remove-watchlist-btn')
+        e.target.classList.add('add-watchlist-btn')
+        document.getElementById(e.target.id).innerHTML = `<i class="fa-solid fa-circle-plus"></i> Watchlist`
         if (watchlist.length === 0) {
             // remove watchlist from local storage
             localStorage.removeItem('watchlist')
         }
     } else {
         watchlist.push(e.target.id)
+        e.target.classList.remove('add-watchlist-btn')
+        e.target.classList.add('remove-watchlist-btn')
+        document.getElementById(e.target.id).innerHTML = `<i class="fa-solid fa-circle-minus"></i> Remove`
     }
     localStorage.setItem('watchlist', JSON.stringify(watchlist))
 })

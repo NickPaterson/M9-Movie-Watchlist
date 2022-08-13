@@ -117,6 +117,7 @@ nav a {
     flex: 1;
     background-color: hsl(var(--clr-bg-alt));
     padding-left: 20px;
+    border: 1px solid hsl(var(--clr-lt-grey-jet));
 }
 .search-btn {
     cursor: pointer;
