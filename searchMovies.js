@@ -1,6 +1,7 @@
 const KEY = "&apikey=9c765940"
 const searchBtn = document.getElementById('search-btn')
 const movieContainer = document.getElementById('movie-container')
+const baseUrl = 'https://www.omdbapi.com/'
 let watchlist = []
 // get watchlist from local storage
 if (localStorage.getItem('watchlist')) {
@@ -11,12 +12,12 @@ searchBtn.addEventListener('click', (e) => {
     movieContainer.innerHTML = ''
     e.preventDefault()
     const query = document.getElementById('search-input').value
-    fetch(`http://www.omdbapi.com/?s=${query}${KEY}`)
+    fetch(`${baseUrl}?s=${query}${KEY}`)
         .then(response => response.json())
         .then(data => {
             const moviesArray = data.Search
             const movies = moviesArray.map(movie => {
-                fetch(`http://www.omdbapi.com/?i=${movie.imdbID}${KEY}`)
+                fetch(`${baseUrl}?i=${movie.imdbID}${KEY}`)
                     .then(response => response.json())
                     .then(data => {
                         const html = setHtml(data)

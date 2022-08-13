@@ -1,5 +1,6 @@
 const KEY = "&apikey=9c765940"
 const movieContainer = document.getElementById('movie-container')
+const baseUrl = 'https://www.omdbapi.com/'
 // localStorage.removeItem('watchlist')
 let watchlist = []
 
@@ -10,7 +11,7 @@ if (localStorage.getItem('watchlist')) {
     // map through watchlist and fetch movie data
     movieContainer.innerHTML = ''
     watchlist.forEach(movie => {
-        fetch(`http://www.omdbapi.com/?i=${movie}${KEY}`)
+        fetch(`${baseUrl}?i=${movie}${KEY}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
