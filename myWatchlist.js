@@ -6,7 +6,6 @@ let watchlist = []
 
 // get watchlist from local storage
 if (localStorage.getItem('watchlist')) {
-    console.log('localStorage: ', localStorage.getItem('watchlist'))
     watchlist = JSON.parse(localStorage.getItem('watchlist'))
     // map through watchlist and fetch movie data
     movieContainer.innerHTML = ''
